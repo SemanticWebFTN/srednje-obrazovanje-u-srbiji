@@ -1,0 +1,13 @@
+# Default select query
+SELECT ?subject ?predicate ?object
+WHERE {
+  ?subject ?predicate ?object
+}
+LIMIT 25
+
+# Basic insert query
+PREFIX ont: <http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT DATA {
+  <http://jjzmaj.edu.rs> rdf:type ont:School;}
