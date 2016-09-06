@@ -1,13 +1,47 @@
-# Default select query
-SELECT ?subject ?predicate ?object
-WHERE {
-  ?subject ?predicate ?object
-}
-LIMIT 25
-
-# Basic insert query
+# Example data insertion
 PREFIX ont: <http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX wiki: <http://wiki/>
 
-INSERT DATA {
-  <http://jjzmaj.edu.rs> rdf:type ont:School;}
+INSERT DATA
+{
+  wiki:JBacki rdf:type ont:County ;
+  ont:name "Juznobacki Okrug" .
+};
+
+INSERT DATA
+{
+  wiki:NoviSad rdf:type ont:Municipality ;
+  ont:name "Novi Sad" ;
+  ont:isPartOf wiki:JBacki .
+};
+
+INSERT DATA
+{
+  wiki:CityOfNoviSad rdf:type ont:City ;
+  ont:name "Novi Sad" ;
+  ont:isPartOf wiki:NoviSad .
+};
+
+INSERT DATA
+{
+  wiki:Address1 rdf:type ont:Address ;
+  ont:name "Zlatne Grede 4" ;
+  ont:isPartOf wiki:CityOfNoviSad .
+};
+
+INSERT DATA
+{
+  <http://jjzmaj.edu.rs> rdf:type ont:School ;
+  ont:name "Jovan Jovanovic Zmaj" ;
+  ont:isLocated wiki:Address1 .
+}
+
+# Find School's County
+SELECT ?okrug
+WHERE {
+  <http://jjzmaj.edu.rs> ont:isLocated ?adresa .
+  ?adresa ont:isPartOf ?grad .
+  ?grad ont:isPartOf ?opstina .
+  ?opstina ont:isPartOf ?okrug .
+}
