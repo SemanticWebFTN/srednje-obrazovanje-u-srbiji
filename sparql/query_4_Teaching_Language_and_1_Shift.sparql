@@ -1,0 +1,19 @@
+# Finds all schools where teaching language is Hungarian and 1 shift
+
+PREFIX ont: <http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wiki: <http://wiki/>
+
+SELECT DISTINCT ?school {
+  ?school rdf:type ?any_school ;
+  ont:hasTeachingLanguage wiki:Hungarian ;
+  ont:numberOfShifts '1'^^xsd:integer .
+  ?any_school rdfs:subClassOf ?highSchool .
+  ?highSchool rdfs:subClassOf ont:School .
+  ?school ont:isLocated ?adresa .
+  ?adresa ont:isPartOf ?grad .
+  ?grad ont:isPartOf ?opstina .
+  ?opstina ont:isPartOf wiki:JBacki .
+}

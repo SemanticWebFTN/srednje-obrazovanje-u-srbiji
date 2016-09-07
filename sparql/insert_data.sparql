@@ -60,21 +60,21 @@ INSERT DATA
 INSERT DATA
 {
   wiki:English rdf:type ont:ForeignLanguage ;
-  wiki:English rdf:type ont:TeachingLanguage ;
+  rdf:type ont:TeachingLanguage ;
   ont:name "Engleski" .
 };
 
 INSERT DATA
 {
   wiki:German rdf:type ont:ForeignLanguage ;
-  wiki:German rdf:type ont:TeachingLanguage ;
+  rdf:type ont:TeachingLanguage ;
   ont:name "Nemacki" .
 };
 
 INSERT DATA
 {
   wiki:French rdf:type ont:ForeignLanguage ;
-  wiki:French rdf:type ont:TeachingLanguage ;
+  rdf:type ont:TeachingLanguage ;
   ont:name "Francuski" .
 };
 
@@ -115,6 +115,8 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:English ;
   ont:hasTeachingLanguage wiki:German ;
   ont:hasTeachingLanguage wiki:French ;
+  ont:numberOfShifts 3.
+};
 
 # Gimnazija Svetozar Markovic
 
@@ -138,6 +140,7 @@ INSERT DATA
   ont:hasForeignLanguage wiki:English ;
   ont:hasForeignLanguage wiki:German ;
   ont:hasForeignLanguage wiki:French ;  
+  ont:numberOfShifts 2.
 };
 
 #ETS Mihajlo Pupin
@@ -161,7 +164,8 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:Hungarian ;
   ont:hasForeignLanguage wiki:English ;
   ont:hasForeignLanguage wiki:German ;
-  ont:hasForeignLanguage wiki:Russian ;  
+  ont:hasForeignLanguage wiki:Russian ;
+  ont:numberOfShifts 2.  
 
 };
 
@@ -182,17 +186,5 @@ INSERT DATA
   ont:numberOfTeacherHighSS 31.10 ;
   ont:hasTeachingLanguage wiki:Serbian ;
   ont:hasTeachingLanguage wiki:Hungarian ;
+  ont:numberOfShifts 1.
 };
-
-# Find School's County
-PREFIX ont: <http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX wiki: <http://wiki/>
-
-SELECT ?okrug
-WHERE {
-  <http://jjzmaj.edu.rs> ont:isLocated ?adresa .
-  ?adresa ont:isPartOf ?grad .
-  ?grad ont:isPartOf ?opstina .
-  ?opstina ont:isPartOf ?okrug .
-}

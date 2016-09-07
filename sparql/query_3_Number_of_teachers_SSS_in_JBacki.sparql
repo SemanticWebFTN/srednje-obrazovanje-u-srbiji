@@ -1,0 +1,17 @@
+# Finds number of teachers of high school education (SSS)
+
+PREFIX ont: <http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wiki: <http://wiki/>
+
+SELECT (SUM(?number) AS ?totalNumber) {
+  ?school rdf:type ?any_school.
+  ?any_school rdfs:subClassOf ?highSchool .
+  ?highSchool rdfs:subClassOf ont:School .
+  ?school ont:isLocated ?adresa .
+  ?adresa ont:isPartOf ?grad .
+  ?grad ont:isPartOf ?opstina .
+  ?opstina ont:isPartOf wiki:JBacki .
+  ?school ont:numberOfTeacherSSS ?number.
+}
