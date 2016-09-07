@@ -196,3 +196,8 @@ WHERE {
   ?grad ont:isPartOf ?opstina .
   ?opstina ont:isPartOf ?okrug .
 }
+
+SELECT ?subject ?predicate ?object
+WHERE {
+  ?subject ?predicate ?object;
+}
