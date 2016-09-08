@@ -4,11 +4,11 @@
 3. Želim da vidim profesore sa srednjom školom u Novom Sadu.
 4. Želim da idem u školu na Mađarskom (ne mora biti gimnazija)
    u kojoj se nastava održava samo u jednoj smeni.
-6. [vrste škola šifarnik] Želim da upišem školu sa domom učenika u Beogradskom
+5. [vrste škola šifarnik] Želim da upišem školu sa domom učenika u Beogradskom
    okrugu.
-7. Želim da upišem trogodišnju školu sa domom učenika.
-8. Želim da upišem poljoprivredno područje rada u trajanju od 4 godine u svom
+6. Želim da upišem trogodišnju školu sa domom učenika.
+7. Želim da upišem poljoprivredno područje rada u trajanju od 4 godine u svom
    okrugu.
-9. Želim sve obrazovne profile koji slušaju informatiku.
-10. Želim da vidim sve vrste srednjih škola u kojima se slušaju najmanje 2
-    strana jezika.
+8. Želim sve obrazovne profile koji slušaju informatiku.
+9. Želim da vidim sve vrste srednjih škola u kojima se slušaju najmanje 2
+   strana jezika.

@@ -115,6 +115,7 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:English ;
   ont:hasTeachingLanguage wiki:German ;
   ont:hasTeachingLanguage wiki:French ;
+}
 
 # Gimnazija Svetozar Markovic
 
@@ -137,7 +138,7 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:Hungarian ;
   ont:hasForeignLanguage wiki:English ;
   ont:hasForeignLanguage wiki:German ;
-  ont:hasForeignLanguage wiki:French ;  
+  ont:hasForeignLanguage wiki:French ;
 };
 
 #ETS Mihajlo Pupin
@@ -161,7 +162,7 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:Hungarian ;
   ont:hasForeignLanguage wiki:English ;
   ont:hasForeignLanguage wiki:German ;
-  ont:hasForeignLanguage wiki:Russian ;  
+  ont:hasForeignLanguage wiki:Russian ;
 
 };
 
@@ -198,6 +199,7 @@ WHERE {
 }
 
 SELECT ?subject ?predicate ?object
-WHERE {
-  ?subject ?predicate ?object;
+WHERE
+{
+  ?subject ?predicate ?object ;
 }

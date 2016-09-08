@@ -6,8 +6,14 @@ PREFIX wiki: <http://wiki/>
 INSERT DATA
 {
   wiki:JBacki rdf:type ont:County ;
-  ont:name "Juznobacki Okrug" .
+  ont:name "Juznobacki okrug" .
 };
+
+INSERT DATA
+{
+  wiki:Beograd rdf:type ont:County ;
+  ont:name "Beogradski okrug"
+}
 
 INSERT DATA
 {
@@ -139,7 +145,7 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:Hungarian ;
   ont:hasForeignLanguage wiki:English ;
   ont:hasForeignLanguage wiki:German ;
-  ont:hasForeignLanguage wiki:French ;  
+  ont:hasForeignLanguage wiki:French ;
   ont:numberOfShifts 2.
 };
 
@@ -165,7 +171,7 @@ INSERT DATA
   ont:hasForeignLanguage wiki:English ;
   ont:hasForeignLanguage wiki:German ;
   ont:hasForeignLanguage wiki:Russian ;
-  ont:numberOfShifts 2.  
+  ont:numberOfShifts 2.
 
 };
 
