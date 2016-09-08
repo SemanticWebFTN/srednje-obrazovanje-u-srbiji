@@ -6,14 +6,20 @@ PREFIX wiki: <http://wiki/>
 INSERT DATA
 {
   wiki:JBacki rdf:type ont:County ;
-  ont:name "Juznobacki okrug" .
+  ont:name "Juznobački okrug" .
 };
 
 INSERT DATA
 {
-  wiki:Beograd rdf:type ont:County ;
-  ont:name "Beogradski okrug"
-}
+  wiki:SevernoBacki rdf:type ont:County ;
+  ont:name "Severnobački  okrug" .
+};
+
+INSERT DATA
+{
+  wiki:Sremski rdf:type ont:County ;
+  ont:name "Sremski okrug" .
+};
 
 INSERT DATA
 {
@@ -31,6 +37,20 @@ INSERT DATA
 
 INSERT DATA
 {
+  wiki:BackaTopola rdf:type ont:Municipality ;
+  ont:name "Bačka Topola" ;
+  ont:isPartOf wiki:SevernoBacki .
+};
+
+INSERT DATA
+{
+  wiki:OpstinaSremskaMitrovica rdf:type ont:Municipality ;
+  ont:name "Opština Sremska Mitrovica" ;
+  ont:isPartOf wiki:Sremski .
+};
+
+INSERT DATA
+{
   wiki:CityOfNoviSad rdf:type ont:City ;
   ont:name "Novi Sad" ;
   ont:isPartOf wiki:NoviSad .
@@ -41,6 +61,20 @@ INSERT DATA
   wiki:CityOfBecej rdf:type ont:City ;
   ont:name "Becej" ;
   ont:isPartOf wiki:Becej .
+};
+
+INSERT DATA
+{
+  wiki:CityOfSremskaMitrovica rdf:type ont:City ;
+  ont:name "Sremska Mitrocica" ;
+  ont:isPartOf wiki:OpstinaSremskaMitrovica .
+};
+
+INSERT DATA
+{
+  wiki:CityOfBackaTopola rdf:type ont:City ;
+  ont:name "Bačka topola" ;
+  ont:isPartOf wiki:BackaTopola .
 };
 
 #Languages
@@ -193,4 +227,48 @@ INSERT DATA
   ont:hasTeachingLanguage wiki:Serbian ;
   ont:hasTeachingLanguage wiki:Hungarian ;
   ont:numberOfShifts 1.
+};
+
+# Mitrovačka gimnazija
+
+INSERT DATA
+{
+  wiki:Address4 rdf:type ont:Address ;
+  ont:name "Светог Саве 2" ;
+  ont:isPartOf wiki:CityOfSremskaMitrovica .
+};
+
+INSERT DATA
+{
+  wiki:CityOfSremskaMitrovica ont:isPartOf wiki:Sremski .
+};
+
+INSERT DATA
+{
+  <http://www.gimnazijasm.edu.rs/> rdf:type ont:GrammarSchool ;
+  ont:name "Mitrovačka gimnazija" ;
+  ont:schoolType 5 ;
+  ont:isLocated wiki:Address4 .
+};
+
+# Agricultural school Bačka Topola
+
+INSERT DATA
+{
+  wiki:Address5 rdf:type ont:Adress ;
+  ont:name "Poljoprivredna škola Bačka Topola" ;
+  ont:isPartOf wiki:CityOfBackaTopola .
+};
+
+INSERT DATA
+{
+  wiki:CityOfBackaTopola ont:isPartOf wiki:SevernoBacki .
+};
+
+INSERT DATA
+{
+  <http://poljoskola.edu.rs> rdf:type ont:VocationalSchool ;
+  ont:name "Poljoprivredna škola Bačka topola" ;
+  ont:schoolType 5 ;
+  ont:isLocated wiki:Address5 .
 };

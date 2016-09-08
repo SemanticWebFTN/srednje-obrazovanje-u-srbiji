@@ -1,1 +1,15 @@
-# Find high schools with student's home in Belgrade county
+# Find high schools with student's home in Srem county
+
+PREFIX ont: <http://data.opendiscoveryspace.eu/lom_ontology_ods.owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wiki: <http://wiki/>
+
+SELECT ?school {
+  ?school ont:schoolType '5'^^xsd:integer ;
+  ont:isLocated ?adress .
+  ?adress ont:isPartOf ?grad .
+  ?grad ont:isPartOf ?opstina .
+  ?opstina ont:isPartOf wiki:Sremski .
+}
